@@ -1,0 +1,10 @@
+{# ========================
+   Site-specific Macros
+   ======================== #}
+
+{% macro dev( block_tag, additional_classes, url, title_tag, title, submitter ) %}
+  <{{ block_tag }} class="want {{ additional_classes }}">
+    <{{ title_tag }}><a class="want__title" href="{{ url }}">{{ title | markdownify | widont | safe }}</a></{{ title_tag }}>
+    <p class="dev__meta">Submitted by {{ submitter }}</p>
+  </{{ block_tag }}>
+{% endmacro %}

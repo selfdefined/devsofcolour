@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+section: wants
+permalink: "/wants/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% else %}index{% endif %}.html"
+pagination:
+  data: collections.devs
+  size: 10
+  alias: devs
+---
+
+{% from "macros/ui.njk" import paginate %}
+
+<h1>{{ title | widont }}</h1>
+
+{{ layoutContent | safe }}
+
+{% if devs.length > 0 %}
+  {% include "components/devs.njk" %}
+  {{ paginate( "Page", pagination ) }}
+{% else %}
+  <p>No one has submitted a profile yet. <a href="/submit/">Wanna be the first?</a></p>
+{% endif %}

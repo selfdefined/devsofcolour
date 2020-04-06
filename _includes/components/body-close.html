@@ -1,0 +1,29 @@
+{% if javascript.body %}
+  {% for js in javascript.body %}
+    <script src="{{ js }}" defer></script>
+  {% endfor %}
+{% endif %}
+<script>
+  (function( window, navigator, document ){
+    // Register the service worker
+    if ( "serviceWorker" in navigator )
+    {
+      window.sw_version = "v1:";
+      navigator.serviceWorker.register( "/sw.js" );
+
+      if ( navigator.serviceWorker.controller )
+      {
+        window.addEventListener( "load", function(){
+          navigator.serviceWorker.controller.postMessage( "clean up" );
+        });
+      }
+
+      var data = {
+        title: document.querySelector("[property='og:title']").getAttribute("content"),
+        description: document.querySelector( "meta[name='description']" ).getAttribute("content")
+      };
+      localStorage.setItem( location, JSON.stringify(data) );
+
+    }
+  }( this, this.navigator, this.document ));
+</script>

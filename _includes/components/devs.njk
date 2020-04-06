@@ -1,0 +1,7 @@
+{% from "macros.njk" import want %}
+
+<ul class="devs">
+  {% for d in devs %}
+    {{ dev( 'li', '', d.url, 'h2', d.data.title, d.data.submitter ) }}
+  {% endfor %}
+</ul>

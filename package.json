@@ -1,0 +1,44 @@
+{
+  "name": "devsofcolour",
+  "title": "Devs of Colour",
+  "description": "Database of developers of colour of all skill levels, languages, backgrounds.",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx eleventy --serve",
+    "build": "npx eleventy",
+    "watch": "npx eleventy --watch",
+    "debug": "DEBUG=* npx eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tatianamac/devsofcolour"
+  },
+  "author": {
+    "name": "Aaron Gustafson",
+    "email": "aaron@easy-designs.net",
+    "url": "https://www.aaron-gustafson.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tatianamac/devsofcolour/issues"
+  },
+  "homepage": "https://devsofcolour.org",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
+    "dotenv": "^6.2.0",
+    "lodash": "^4.17.15",
+    "luxon": "^1.17.1",
+    "markdown-it": "^9.0.1",
+    "markdown-it-anchor": "^5.2.4",
+    "node-fetch": "^2.3.0",
+    "sanitize-html": "^1.20.0",
+    "widont": "^0.3.3"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "clean-css": "^4.2.1",
+    "html-minifier": "^4.0.0",
+    "uglify-es": "^3.3.9"
+  }
+}

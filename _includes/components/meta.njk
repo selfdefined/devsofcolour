@@ -1,0 +1,45 @@
+{% set page_title %}{{ title or renderData.title or metadata.title }}{% endset %}
+{% set page_description %}{{ description or pkg.description }}{% endset %}
+{% set canonical %}{{ pkg.homepage }}{{ page.url }}{% endset %}
+{% set og_image %}{{ pkg.homepage }}/static/img/og-icon.png{% endset %}
+
+<title>{{ page_title }}{% if page_title != pkg.title %} ↬ {{ pkg.title }}{% endif %}</title>
+<meta property="og:title" content="{{ page_title }}">
+<meta name="author" content="{{ pkg.author.name }}">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="{{ page_description }}">
+<meta property="og:description" content="{{ page_description }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:site_name" content="{{ pkg.title }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:image:alt" content="Devs of Colour icon">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@devsofcolour">
+<meta name="twitter:creator" content="@devsofcolour">
+<script type="application/ld+json">{
+  "name": "{{ title }}",
+  "description":"{{ page_description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ pkg.author.name }}"
+  },
+  "@type": "WebSite",
+  "url": "{{ canonical }}",
+  "image": "{{ og_image }}",
+  "headline": "{{ page_title }}",
+  "publisher": {
+    "@type": "Organization",
+    "logo":{
+      "@type": "ImageObject",
+      "url": "{{ og_image }}"
+    },
+    "name": "{{ pkg.title }}"
+  },
+  "sameAs":[
+    "https://twitter.com/webwewantfyi",
+    "https://github.com/webwewant"
+  ],
+  "@context": "http://schema.org"
+}</script>

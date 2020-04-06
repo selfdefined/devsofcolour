@@ -1,0 +1,33 @@
+<!doctype html>
+<html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
+
+  {% include "components/head.njk" %}
+
+  {% if body_class %}
+    <body class="{{ body_class }}">
+  {% else %}
+    <body>
+  {% endif %}
+
+    <header>
+      <a id="logo" href="{{ '/' | url }}">
+        <div class="logo-container">
+          {% include "assets/svg/logo.svg" %}
+        </div>
+      </a>
+      {% include "components/nav.njk" %}
+    </header>
+
+    <main>
+      {{ layoutContent | safe }}
+    </main>
+
+    <footer>
+      {% include "components/footer.html" %}
+    </footer>
+
+    {% include "components/body-close.html" %}
+
+  </body>
+
+</html>

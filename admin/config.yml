@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: WebWeWant/webwewant.fyi
+  branch: master # Branch to update (optional; defaults to master)
+
+# Uncomment below to enable drafts
+# publish_mode: editorial_workflow
+
+media_folder: "static/img" # Media files will be stored in the repo under images/uploads
+
+collections:
+  # Wants
+  - name: "devs"
+    label: "Dev"
+    folder: "devs"
+    create: true
+    slug: "{{number}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Number", name: "number", widget: "number" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Description", name: "body", widget: "markdown" }
+  # Pages
+  - name: "pages"
+    label: "Page"
+    folder: "pages"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Navigation Title", name: "navtitle", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: "nav" }
+      - { label: "Body", name: "body", widget: "markdown" }
