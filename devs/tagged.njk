@@ -15,11 +15,8 @@ renderData:
   title: Devs Tagged “{{ tag | unslug | fixNames }}”
 permalink: /devs/tagged/{{ tag }}/
 ---
-{% from "macros/ui.njk" import paginate %}
 
 <h1>Tagged “{{ tag | unslug | fixNames }}”</h1>
 
 {% set devs = collections[ tag ] %}
 {% include "components/devs.njk" %}
-
-{# {{ paginate( "Tag", pagination ) }} #}
