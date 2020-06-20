@@ -153,7 +153,7 @@ module.exports = function(eleventyConfig) {
     var tags = [];
     collection.getAll()
       .map( item => {
-        if ( item.inputPath.indexOf("wants/") > -1 )
+        if ( item.inputPath.indexOf("devs/") > -1 )
         {
           item.data.tags.map( tag => {
             if ( tags.indexOf( tag ) < 0 )

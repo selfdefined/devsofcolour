@@ -9,7 +9,7 @@ backend:
 media_folder: "static/img" # Media files will be stored in the repo under images/uploads
 
 collections:
-  # Wants
+  # Devs
   - name: "devs"
     label: "Dev"
     folder: "devs"
