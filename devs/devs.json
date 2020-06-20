@@ -1,3 +1,6 @@
 {
-  "layout": "layouts/dev.njk"
+  "title": "Joe Zatkovich",
+  "number": 1,
+  "tags": "test",
+  "description": "test"
 }

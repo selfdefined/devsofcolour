@@ -1,8 +1,8 @@
 ---
-layout: layouts/devs.njk
 title: The Devs of Colour
 description: Get to know the developers of colour.
 date: 2019-01-02T00:00:00.000Z
+permalink: /devs/
 navtitle: Devs
 tags:
   - nav
